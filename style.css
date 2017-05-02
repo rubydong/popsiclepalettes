@@ -1,0 +1,71 @@
+body {
+    width: 70%;
+    margin: 0 auto;
+    font-family: Raleway; 
+    background: url("crossword.png");
+}
+
+h1 {
+    text-align: center;
+    color: #4C586F;
+}
+
+hr {
+    width: 100px;
+}
+
+.popsicles {
+  margin: auto;
+  position: relative;
+  text-align:center;
+}
+.popsicle {
+    padding: 25px;
+    display:inline-block;
+}
+
+.top, .middle, .bottom {
+    margin: 0 auto;
+    margin-top: 0px;
+    width: 100px;
+    height: 70px;
+
+}
+.top {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.bottom {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.top::after{
+    content: "";
+    width: 7px;
+    height: 210px;
+    position: absolute;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    margin-left: 43px;
+    background: white;
+    opacity: 0.2;
+}
+
+.stick {
+    margin: 0 auto;
+    width: 20px;
+    height: 70px;
+    border-radius: 0 0 25px 25px;
+}
+
+.stick::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+    position: absolute;
+    background: #FFF;
+    opacity: 0.2;
+}

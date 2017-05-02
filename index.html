@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>  
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <link href="style.css" rel="stylesheet">
+        <style>
+  
+        </style>
+    </head>
+    <body>
+        
+        <h1 style="margin-top: 50px"> Popsicle Color Palettes </h1> <hr>
+        <div ng-app="myApp" ng-controller="myCtrl" class="mainpop">
+            
+
+            <div class="popsicles">
+                
+                <div class="popsicle" ng-repeat="colorset in colors">
+                    <div class="top" style="background-color: {{colorset.colorset[0]}}">  
+
+                    </div>
+                    <div class="middle" style="background-color: {{colorset.colorset[1]}}">
+                    </div>
+                    <div class="bottom" style="background-color: {{colorset.colorset[2]}}"></div>
+                    <div class="stick" style="background-color:{{colorset.colorset[3]}}"></div>
+                </div>
+            </div>
+           
+        </div>
+            
+
+        <script>
+            var app = angular.module('myApp', []);
+            app.controller('myCtrl', function($scope) {
+                $scope.title = "Popsicles Color Palettes";
+                
+                $scope.colors =[
+                    {"colorset": [
+                        "#E1D8C9",
+                        "#DEB5AF",
+                        "#5F3841",
+                        "#35364A"
+                    ]}, { "colorset": [
+                        "#FE5F5F", 
+                        "#E7E1E1",
+                        "#263547",
+                        "#9F9DA3"
+                    ]}, { "colorset": [
+                        "#D99D90", 
+                        "#AAC7D1", 
+                        "#7B95A0", 
+                        "#715F5B"
+                    ]}, { "colorset": [
+                        "#EE5F63",
+                        "#F1D7BA",
+                        "#E5C4A3",
+                        "#7EA5A4"
+                    ]}, { "colorset": [
+                        "#F7CBCB",
+                        "#E1F7CB",
+                        "#B3A29A",
+                        "#C5C6B6"
+                    ]}, { "colorset": [
+                        "#EBECED",
+                        "#A2AAB0", 
+                        "#4C586F", 
+                        "#3E3E3B"
+                    ]}, { "colorset": [
+                        "#E3E2DD",
+                        "#CCA2A9",
+                        "#81A5C1",
+                        "#3B4555"
+                    ]}, { "colorset": [
+                        "#F0E5DE",
+                        "#ABD0CE",
+                        "#7C7877",
+                        "#D9D4CF"
+                    ]}, { "colorset": [
+                        "#D09E88",
+                        "#FADAD8",
+                        "#534847",
+                        "#9B8281"
+                    ]}, { "colorset": [
+                        "#A3C9C7",
+                        "#CB7575",
+                        "#EF9E9F",
+                        "#353848"
+                     ]}, { "colorset": [
+                        "#958C86",
+                        "#D4B4AD",
+                        "#A3A8AA",
+                        "#BC7D85"
+                     ]}, { "colorset": [
+                        "#F8BCC1",
+                        "#F7FCFF",
+                        "#83B8B6",
+                        "#CB948D"
+                    ]}, { "colorset": [
+                        "#8DC4C5",
+                        "#D6E1E2",
+                        "#EBAB95",
+                        "#ABC4C5"
+                     ]}, { "colorset": [
+                        "#D9DDE7",
+                        "#A38CA6",
+                        "#644255",
+                        "#D0E8EA"
+                    ]}, { "colorset": [
+                        "#FAEBF0",
+                        "#D690B8",
+                        "#A8B4BD",
+                        "#C1CCD3"
+                    ]}
+                ];
+
+            });
+        </script>
+    </body>
+</html>
