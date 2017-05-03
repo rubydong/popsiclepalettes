@@ -1,37 +1,54 @@
 body {
-    width: 65%;
+    width: 90%;
     margin: 0 auto;
     font-family: Raleway; 
     background: url("crossword.png");
 }
 
 h1 {
+    font-size: 50px;
+}
+h1, .addhere {
     text-align: center;
     color: #4C586F;
 }
 
 hr {
     width: 100px;
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
 }
 
+.info {
+    width: 25%;
+    float: left;
+    position: fixed;
+    margin: 0 auto;
+    margin-top: 10%;
+/*    border:1px solid pink;*/
+}
 .popsicles {
-  margin: auto;
-  position: relative;
+    width: 70%;
+    margin-left: 30%;
+    float: left;
   text-align:center;
 }
+
 .popsicle {
     padding: 30px;
     display:inline-block;
 }
 
-.top, .middle, .bottom {
+.top, .middle, .bottom, .topcustom {
     margin: 0 auto;
     margin-top: 0px;
     width: 100px;
     height: 70px;
-
 }
-.top {
+
+.top,.topcustom {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
@@ -39,6 +56,10 @@ hr {
 .bottom {
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+}
+
+.top:hover{
+    background-color: pink;
 }
 
 .top::after{
@@ -60,6 +81,7 @@ hr {
     border-radius: 0 0 25px 25px;
 }
 
+
 .stick::after {
     content: "";
     width: 20px;
@@ -68,4 +90,15 @@ hr {
     position: absolute;
     background: #FFF;
     opacity: 0.2;
+}
+
+
+@media only screen and (max-width: 800px) {
+    h1 {
+        font-size: 30px;
+    }
+    
+    .info {
+        margin-top: 30%;
+    }
 }
