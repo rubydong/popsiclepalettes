@@ -5,6 +5,7 @@
             Popsicle Palettes
         </title>
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
         <link href="style.css" rel="stylesheet">
         <style>
@@ -12,32 +13,47 @@
         </style>
     </head>
     <body>
-        
-        <h1 style="margin-top: 50px"> Popsicle Color Palettes </h1> <hr>
+       
+            
         <div ng-app="myApp" ng-controller="myCtrl" class="mainpop">
             
-
+            <div class="info">
+            
+                <h1> Popsicle Color Palettes </h1> <hr>
+                <div class="addhere">Hover over the popsicles to <br> get a hex value color!
+                <div class="hex">#4C586F</div>
+                </div>
+                
+            </div>
             <div class="popsicles">
                 
                 <div class="popsicle" ng-repeat="colorset in colors">
-                    <div class="top" style="background-color: {{colorset.colorset[0]}}">  
-
+                    
+                    <div class="top" style="background-color: {{colorset.colorset[0]}}" ng-mouseover="popclicked(colorset.colorset[0])"> 
                     </div>
-                    <div class="middle" style="background-color: {{colorset.colorset[1]}}">
+                    <div class="middle" style="background-color: {{colorset.colorset[1]}}" ng-mouseover="popclicked(colorset.colorset[1])">
                     </div>
-                    <div class="bottom" style="background-color: {{colorset.colorset[2]}}"></div>
-                    <div class="stick" style="background-color:{{colorset.colorset[3]}}"></div>
+                    <div class="bottom" style="background-color: {{colorset.colorset[2]}}"  ng-mouseover="popclicked(colorset.colorset[2])"></div>
+                    <div class="stick" style="background-color:{{colorset.colorset[3]}}"  ng-mouseover="popclicked(colorset.colorset[3])"></div>
+                    
                 </div>
+                
+                
             </div>
-           
         </div>
             
 
         <script>
             var app = angular.module('myApp', []);
             app.controller('myCtrl', function($scope) {
-                $scope.title = "Popsicles Color Palettes";
                 
+                $scope.popclicked = function(color) {
+                    $("h1").css("color", color);
+                    $(".hex").html(color);
+                    $(".addhere").css("color", color);
+                 
+                };
+                $scope.title = "Popsicles Color Palettes";
                 $scope.colors =[
                     {"colorset": [
                         "#E1D8C9",
